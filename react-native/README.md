@@ -1,3 +1,7 @@
-# Wolf Tracks - React Native
+# Wolf Tracks (React Native) [UNDER CONSTRUCTION]
 
-Wolf Tracks is a research focused pedestrian counting app that allows for real-time data collection and visualization, with the ability to import and export data to compatible spreadsheet formats.
+A complete rewrite of the iOS/Swift implementation of WolfTracks that allows for cross-platform use. Information will be updated throughout the development process.
+
+**This app is under early stages of development!**
+
+### React Native implementation by WinterTech13
