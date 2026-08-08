@@ -1,7 +1,19 @@
-import { useState } from "react";
-import { Text, View, StyleSheet, Alert, TouchableOpacity, TextInput} from "react-native";
+import {
+    useState
+} from "react";
 
-export default function homescreen() {
+import {
+    Text,
+    View,
+    StyleSheet,
+    Alert,
+    TouchableOpacity,
+    TextInput
+} from "react-native";
+
+import common from "../style/common";
+
+export default function inputscreen() {
     const [pedestrianCount, setPedestrianCount] = useState([0, 0, 0, 0]);
     const [lastUpdated, setLastUpdated] = useState("");
     const [latestDataPoint, updateLatestDataPoint] = useState("");
@@ -23,15 +35,21 @@ export default function homescreen() {
 
     function getDateString() {
         const currentDate = new Date();
-        let formattedDate = currentDate.toLocaleDateString('en-US', {
-            month: '2-digit',
-            day: '2-digit',
-            year: 'numeric'
-        }) + ' ' + currentDate.toLocaleTimeString('en-US', {
-            hour: '2-digit',
-            minute: '2-digit',
-            hour12: false
-        });
+        let formattedDate = currentDate.toLocaleDateString(
+            'en-US',
+            {
+                month: '2-digit',
+                day: '2-digit',
+                year: 'numeric'
+            }
+        ) + ' ' + currentDate.toLocaleTimeString(
+            'en-US',
+            {
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: false
+            }
+        );
         setLastUpdated(formattedDate);
         return formattedDate;
     }
@@ -49,15 +67,15 @@ export default function homescreen() {
     }
 
     return (
-        <View style={styles.container}>
+        <View style={common.container}>
             <View>
-                <Text style={styles.headerText}>Data Collection</Text>
+                <Text style={common.headerText}>Data Collection</Text>
             </View>
             <View style={styles.rowView}>
-                <Text style={styles.standardText}>Last Updated: {lastUpdated}</Text>
+                <Text style={common.standardText}>Last Updated: {lastUpdated}</Text>
             </View>
             <View style={styles.rowView}>
-                <Text style={styles.standardText}>Location: </Text>
+                <Text style={common.standardText}>Location: </Text>
                 <TextInput
                     style={styles.inputConfig}
                     placeholderTextColor="#eeeeee"
@@ -66,10 +84,10 @@ export default function homescreen() {
                 />
             </View>
             <View style={styles.rowView}>
-                <Text style={styles.standardText}>North</Text>
-                <Text style={styles.standardText}>South</Text>
-                <Text style={styles.standardText}>East</Text>
-                <Text style={styles.standardText}>West</Text>
+                <Text style={common.standardText}>North</Text>
+                <Text style={common.standardText}>South</Text>
+                <Text style={common.standardText}>East</Text>
+                <Text style={common.standardText}>West</Text>
             </View>
             <View style={styles.rowView}>
                 <TouchableOpacity
@@ -140,10 +158,10 @@ export default function homescreen() {
                 </TouchableOpacity>
             </View>
             <View>
-                <Text style={styles.standardText}>{latestDataPoint}</Text>
+                <Text style={common.standardText}>{latestDataPoint}</Text>
             </View>
             <View>
-                <Text style={styles.standardText}>Field Notes:</Text>
+                <Text style={common.standardText}>Field Notes:</Text>
             </View>
             <View>
                 <TextInput
@@ -152,6 +170,7 @@ export default function homescreen() {
                     placeholder="Enter field notes here..."
                     textAlign="left"
                     multiline={true}
+                    numberOfLines={4}
                 />
             </View>
         </View>

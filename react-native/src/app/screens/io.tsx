@@ -1,17 +1,27 @@
-import { Text, View, StyleSheet } from "react-native";
+import {
+    Text,
+    View,
+    StyleSheet
+} from "react-native";
 
-export default function homescreen() {
-  return (
-    <View style={styles.container}>
-      <Text>Coming Soon...</Text>
-    </View>
-  );
+import common from "../style/common";
+
+export default function dataioscreen() {
+    return (
+        <View style={common.container}>
+            <View>
+                <Text style={common.headerText}>Data</Text>
+            </View>
+            <View>
+                <Text style={common.standardText}>Coming Soon...</Text>
+            </View>
+        </View>
+    );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
+    standardText: {
+            fontSize: 20,
+            color: "#eeeeee",
+    },
 });
